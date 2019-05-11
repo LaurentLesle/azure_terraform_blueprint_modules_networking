@@ -6,7 +6,7 @@ output "subnet_ids" {
   }"
 }
 
-output "vnet_id" {
+output "vnet" {
   depends_on = ["module.azure_dns_internal"]
   value = "${
     map(
