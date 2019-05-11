@@ -95,11 +95,11 @@ subnet_ids {
 }
 ```
 
-## vnet_map
+## vnet
 Return a map of
 ```
-vnet_map { 
+vnet { 
     id             = vnet id
-    address_space  = The address space that is used the virtual network 
+    address_space  = The address space that is used the virtual network (comma separated)
 }
 ```
