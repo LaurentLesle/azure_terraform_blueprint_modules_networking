@@ -11,7 +11,7 @@ output "vnet_id" {
   value = "${
     map(
       "id",             "${azurerm_virtual_network.vnet.id}",
-      "address_space",  "${azurerm_virtual_network.vnet.address_space}"
+      "address_space",  "${join(",", azurerm_virtual_network.vnet.address_space)}"
     )
   }"
 }
