@@ -1,4 +1,4 @@
-output "subnet_map" {
+output "subnet_ids" {
   depends_on = ["module.azure_dns_internal"]
 
   value = "${
@@ -8,5 +8,10 @@ output "subnet_map" {
 
 output "vnet_id" {
   depends_on = ["module.azure_dns_internal"]
-  value = "${azurerm_virtual_network.vnet.id}"
+  value = "${
+    map(
+      "id",             "${azurerm_virtual_network.vnet.id}",
+      "address_space",  "${azurerm_virtual_network.vnet.address_space}"
+    )
+  }"
 }
