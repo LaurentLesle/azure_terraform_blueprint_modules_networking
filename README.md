@@ -75,7 +75,7 @@ subnet_map {
 }
 ```
 ## dns_zone
-(Required) Map of the private DNS zone linked to the virtual network
+(Optional) Map of the private DNS zone linked to the virtual network
 
 Note it is included at creation time as the private dns zone cannot be added when the vnet has resources attached to it.
 ```
