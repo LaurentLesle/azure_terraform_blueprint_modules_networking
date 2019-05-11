@@ -7,5 +7,5 @@ resource "azurerm_subnet" "subnets" {
     name                    = "${element(local.subnet_list, count.index)}"
     resource_group_name     = "${var.resource_group_name}"
     virtual_network_name    = "${azurerm_virtual_network.vnet.name}"
-    address_prefix          = "${lookup(var.subnets, var.subnets[element(local.subnet_list, count.index)])}"
+    address_prefix          = "${var.subnets[element(local.subnet_list, count.index)]}"
 }
